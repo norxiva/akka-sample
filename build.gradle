@@ -1,0 +1,53 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE'
+    }
+
+}
+
+group 'my.norxiva'
+version '1.0-SNAPSHOT'
+
+allprojects {
+
+    ext.akkaVersion = '2.5.3'
+    ext.junitVersion = '4.12'
+    ext.lombokVersion = '1.16.16'
+    ext.scalaBinaryVersion = '2.12'
+    ext.logbackVersion = '1.2.3'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    apply plugin: 'io.spring.dependency-management'
+//    apply plugin: 'org.springframework.boot'
+
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        compile "com.typesafe.akka:akka-actor_$scalaBinaryVersion:$akkaVersion"
+        compile "org.projectlombok:lombok:$lombokVersion"
+        testCompile "com.typesafe.akka:akka-testkit_$scalaBinaryVersion:$akkaVersion"
+        testCompile "junit:junit:$junitVersion"
+    }
+
+}
+
