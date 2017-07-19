@@ -33,6 +33,7 @@ public class SimpleExample {
     }
 
     public static class Order implements Serializable{
+        private static final long serialVersionUID = -7687028641855741642L;
         private String no;
         private BigDecimal amount;
 
@@ -71,6 +72,7 @@ public class SimpleExample {
     }
 
     public static class Transaction implements Serializable {
+        private static final long serialVersionUID = 3781102554744505550L;
         private String no;
         private BigDecimal amount;
 
