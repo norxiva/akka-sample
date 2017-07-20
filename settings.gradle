@@ -1,3 +1,4 @@
 rootProject.name = 'akka-sample'
 include 'akka-sample-actor'
+include 'akka-sample-persistence'
 

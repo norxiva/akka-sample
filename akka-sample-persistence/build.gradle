@@ -1,0 +1,7 @@
+
+dependencies {
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+    compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+    compile "com.typesafe.akka:akka-persistence_$scalaBinaryVersion:$akkaVersion"
+    compile "org.iq80.leveldb:leveldb:$leveldbVersion"
+}
